@@ -1,11 +1,22 @@
 <?php
-    include_once('./pokemon.php');
-    include_once('./pokeball.php');
+    include_once './pokemons/pokemon.php';
+    include_once './pokemons/salameche.php';
+    include_once './pokemons/bulbizarre.php';
+    include_once './pokemons/carapuce.php';
 
-    $aspifion = new Pokemon('Aspifion', 50, 100, 1, 5);
-    $aspifouette = new Pokemon('Aspifouette', 150, 150, 5, 10);
+    include_once './items/balls/ball.php';
+    include_once './items/balls/pokeball.php';
+    include_once './items/balls/superball.php';
+    include_once './items/balls/hyperball.php';
+    include_once './items/balls/masterball.php';
 
-    $masterBall = new Pokeball('MasterBall', 5);
+    include_once './items/potions/potions.php';
+    include_once './items/potions/potion.php';
+    include_once './items/potions/superpotion.php';
+    include_once './items/potions/hyperpotion.php';
+    include_once './items/potions/potionmax.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +29,14 @@
     </head>
     <body>
         <?php
-            $aspifion->attack($aspifouette);
-            $masterBall->capture($aspifion);
+            echo 'Un salamèche sauvage apparaît<br>';
+            $salameche = new Salameche(8);
+            echo 'Carapuce est envoyé au combat<br>';
+            $carapuce = new Carapuce(5);
+            $carapuce->attack($salameche);
+            $salameche->attack($carapuce);
+
+
         ?>
     </body>
 </html>
